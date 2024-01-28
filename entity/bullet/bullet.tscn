@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://426yef3cr6ni"]
+
+[ext_resource type="Script" path="res://entity/bullet/bullet.gd" id="1_mx5xw"]
+[ext_resource type="Texture2D" uid="uid://stwjfkug0a14" path="res://entity/enemy/basic/proart.png" id="1_pvoxo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nuh1m"]
+radius = 10.4403
+
+[node name="Bullet" type="CharacterBody2D" groups=["hurtful"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_mx5xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nuh1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_pvoxo")
+
+[node name="ExpireTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ExpireTimer" to="." method="_on_expire_timer_timeout"]

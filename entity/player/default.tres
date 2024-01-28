@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://c1jmd2pyd15s1"]
+
+[ext_resource type="Script" path="res://entity/player/player-stats.gd" id="1_h02t6"]
+
+[resource]
+script = ExtResource("1_h02t6")
+move_speed = 400.0
+max_health = 5.0
