@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cquwg7k7gfo58"]
+
+[ext_resource type="PackedScene" uid="uid://426yef3cr6ni" path="res://entity/bullet/bullet.tscn" id="1_vgxrn"]
+
+[node name="FriendlyBullet" groups=["friendly-hurtful"] instance=ExtResource("1_vgxrn")]
+modulate = Color(1, 0.270588, 1, 1)

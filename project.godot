@@ -15,13 +15,17 @@ run/main_scene="res://level/test/devroom.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://util/signal_bus.gd"
+Groups="*res://util/groups.gd"
+
 [layer_names]
 
 2d_physics/layer_1="Level"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Hurtful"
-2d_physics/layer_5="FriendlyHurtful"
 
 [rendering]
 
