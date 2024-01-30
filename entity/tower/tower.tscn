@@ -3,10 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dejpw4wkoqys2" path="res://entity/player/proart.png" id="1_q24dj"]
 [ext_resource type="Script" path="res://entity/tower/tower.gd" id="1_yqjif"]
 [ext_resource type="PackedScene" uid="uid://cquwg7k7gfo58" path="res://entity/bullet/subscenes/friendly_bullet.tscn" id="2_lm7fn"]
+[ext_resource type="PackedScene" uid="uid://1bwfi1jxx0us" path="res://cmp/vision/vision.tscn" id="4_aejkh"]
 [ext_resource type="PackedScene" uid="uid://bcq4vbl84f0q6" path="res://cmp/hurtbox/Hurtbox.tscn" id="4_cyqym"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pgi2e"]
-radius = 354.683
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ay0p1"]
 radius = 36.4966
@@ -19,13 +17,7 @@ bullet_scn = ExtResource("2_lm7fn")
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_q24dj")
 
-[node name="Vision" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
-shape = SubResource("CircleShape2D_pgi2e")
-debug_color = Color(1, 1, 1, 0.160784)
+[node name="Vision" parent="." instance=ExtResource("4_aejkh")]
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.3
@@ -37,5 +29,4 @@ listen_for_group = 4
 shape = SubResource("CircleShape2D_ay0p1")
 debug_color = Color(0.976471, 0, 0.423529, 0.419608)
 
-[connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
