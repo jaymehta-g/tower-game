@@ -14,6 +14,9 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_w86af")]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
