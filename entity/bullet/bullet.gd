@@ -3,7 +3,10 @@ class_name Bullet
 const ENEMY_MASK := 1<<3
 const FRIENDLY_MASK := 1<<4
 
-@export var group: Groups.Names
+@export_enum(
+	Groups.FRIEND_HURTFUL,
+	Groups.ENEMY_HURTFUL,
+) var group: String
 
 var is_emeny: bool
 

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SignalBus="*res://util/signal_bus.gd"
 Groups="*res://util/groups.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [layer_names]
 
 2d_physics/layer_1="Level"

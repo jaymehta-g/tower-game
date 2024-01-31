@@ -33,7 +33,7 @@ shape = SubResource("CircleShape2D_8q58f")
 autostart = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_vnybk")]
-listen_for_group = 3
+listen_for_group = "friendly-hurtful"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_csr00")
@@ -41,6 +41,7 @@ debug_color = Color(0.972549, 0.133333, 0.25098, 0.419608)
 
 [node name="Vision" parent="." instance=ExtResource("5_1o6g4")]
 collision_mask = 2
+detect_group = "player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 shape = SubResource("CircleShape2D_sqqgh")

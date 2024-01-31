@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bcq4vbl84f0q6" path="res://cmp/hurtbox/Hurtbox.tscn" id="4_cyqym"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wdkf"]
-radius = 251.962
+radius = 375.021
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ay0p1"]
 radius = 36.4966
@@ -22,7 +22,7 @@ scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_q24dj")
 
 [node name="Vision" parent="." instance=ExtResource("4_aejkh")]
-detect_group = 1
+detect_group = "enemy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 shape = SubResource("CircleShape2D_8wdkf")
@@ -32,7 +32,7 @@ debug_color = Color(1, 1, 1, 0.0784314)
 wait_time = 0.3
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_cyqym")]
-listen_for_group = 4
+listen_for_group = "enemy-hurtful"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_ay0p1")

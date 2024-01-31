@@ -1,7 +1,11 @@
 extends Area2D
 class_name Vision
 
-@export var detect_group: Groups.Names
+@export_enum(
+	Groups.PLAYER,
+	Groups.ENEMY,
+	Groups.FRIEND,
+) var detect_group: String
 
 signal target_entered
 
@@ -9,7 +13,7 @@ signal target_entered
 
 func get_all_targets() -> Array[Node2D]:
 	return get_overlapping_bodies() \
-		.filter(func(x): return x.is_in_group(Groups.group_name(detect_group)))
+		.filter(func(x): return x.is_in_group(detect_group))
 
 # Nullable
 func get_closest_target() -> Node2D:
@@ -32,4 +36,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(Groups.group_name(detect_group)): target_entered.emit()
+	if body.is_in_group(detect_group): target_entered.emit()

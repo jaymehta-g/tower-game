@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 
 @export var bullet_tscn: PackedScene
 @onready var hurtbox: Hurtbox = $Hurtbox
