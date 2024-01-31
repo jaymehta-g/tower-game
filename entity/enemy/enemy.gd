@@ -40,4 +40,3 @@ func _physics_process(delta: float) -> void:
 		var vect := position.direction_to(body.position) * accel * -1
 		velocity += vect
 	move_and_slide()
-
