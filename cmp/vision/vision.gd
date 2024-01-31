@@ -1,8 +1,9 @@
 extends Area2D
+class_name Vision
 
 @export var detect_group: Groups.Names
 
-signal target_enterred()
+signal target_entered
 
 @onready var parent: Node2D = get_parent()
 
@@ -31,4 +32,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(Groups.group_name(detect_group)): target_enterred.emit()
+	if body.is_in_group(Groups.group_name(detect_group)): target_entered.emit()

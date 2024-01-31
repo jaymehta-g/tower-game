@@ -22,6 +22,7 @@ stats = ExtResource("2_el713")
 shape = SubResource("RectangleShape2D_bhw4r")
 
 [node name="Pro Art" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_e5gy2")
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_o2irx")]
