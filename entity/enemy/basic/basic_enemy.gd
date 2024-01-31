@@ -3,24 +3,26 @@ extends Enemy
 @export var bullet_tscn: PackedScene
 
 var player_target: Player # Nullable
-var move_speed: float = 200
 var avoid_distance: float = 250
 
 func _ready() -> void:
-	super._ready()
+	super()
 	vision.target_entered.connect(_on_sight_body_entered)
 
 func _process(delta: float) -> void:
+	super(delta)
 	if not player_target: return
 	if not is_instance_valid(player_target): player_target = null
 	if not player_target.position \
 		.distance_squared_to(position) \
 		< avoid_distance**2:
 		
-		velocity = position.direction_to(player_target.position)
+		move_direction = position.direction_to(player_target.position)
 	else:
-		velocity = Vector2.ZERO
-	velocity *= move_speed
+		move_direction = Vector2.ZERO
+
+func _physics_process(delta: float) -> void:
+	super(delta)
 
 func _on_shoot_timer_timeout() -> void:
 	if not player_target: return

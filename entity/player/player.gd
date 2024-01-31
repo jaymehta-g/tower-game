@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	input_dir = Input.get_vector(&"ui_left",&"ui_right",&"ui_up", &"ui_down")
-	if health == 0:
+	if health <= 0:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
