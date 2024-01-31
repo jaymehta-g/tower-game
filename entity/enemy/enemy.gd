@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	velocity = move_direction * move_speed
+	velocity = move_direction.normalized() * move_speed
 	for body: Node2D in soft_collision.get_overlapping_bodies():
 		if body == self: continue
 		var accel := soft_collision_strength / position.distance_to(body.position)
