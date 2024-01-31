@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://level/test/devroom.gd" id="1_4yj2k"]
 [ext_resource type="PackedScene" uid="uid://dft383e7e1pvk" path="res://entity/player/player.tscn" id="1_w86af"]
-[ext_resource type="PackedScene" uid="uid://daae1kskyxk0r" path="res://entity/enemy/basic/enemy.tscn" id="2_4ylr8"]
 [ext_resource type="Script" path="res://level/test/devroom_label.gd" id="4_eb7pd"]
 [ext_resource type="PackedScene" uid="uid://bw5dfsfgyh6cy" path="res://entity/tower/tower.tscn" id="4_mpk0m"]
 [ext_resource type="Script" path="res://level/test/devroom_spawner.gd" id="6_5pyrx"]
+[ext_resource type="PackedScene" uid="uid://dwym504m8b81q" path="res://entity/enemy/basic/basic_enemy.tscn" id="6_e0nta"]
 
 [node name="Devroom" type="Node2D"]
 script = ExtResource("1_4yj2k")
@@ -28,7 +28,7 @@ one_shot = true
 [node name="Spawner" type="Marker2D" parent="."]
 position = Vector2(280, 264)
 script = ExtResource("6_5pyrx")
-enemy_scn = ExtResource("2_4ylr8")
+enemy_scn = ExtResource("6_e0nta")
 
 [node name="Timer" type="Timer" parent="Spawner"]
 wait_time = 3.0
