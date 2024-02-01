@@ -21,6 +21,7 @@ SignalBus="*res://util/signal_bus.gd"
 Groups="*res://util/groups.gd"
 Globals="*res://util/globals.gd"
 Util="*res://util/util.gd"
+EnemyServer="*res://entity/enemy/enemy_server.gd"
 
 [display]
 

@@ -28,6 +28,7 @@ func _ready() -> void:
 			if health <= 0:
 				queue_free()
 	)
+	EnemyServer.register(self)
 
 func _process(delta: float) -> void:
 	pass
