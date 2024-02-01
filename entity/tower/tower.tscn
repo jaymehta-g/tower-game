@@ -22,7 +22,7 @@ scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_q24dj")
 
 [node name="Vision" parent="." instance=ExtResource("4_aejkh")]
-detect_group = "enemy"
+detect_groups = Array[int]([1])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 shape = SubResource("CircleShape2D_8wdkf")
