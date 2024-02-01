@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://util/signal_bus.gd"
 Groups="*res://util/groups.gd"
+Globals="*res://util/globals.gd"
+Util="*res://util/util.gd"
 
 [display]
 
