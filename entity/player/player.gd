@@ -8,6 +8,7 @@ var health: float
 
 func _ready() -> void:
 	health = stats.max_health
+	Globals.player = self
 
 func _process(delta: float) -> void:
 	input_dir = Input.get_vector(&"ui_left",&"ui_right",&"ui_up", &"ui_down")
