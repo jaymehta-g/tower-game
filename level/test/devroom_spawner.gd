@@ -15,5 +15,5 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var node := (enemy_scn.instantiate() as Enemy)
-	node.position = position + Vector2.RIGHT.rotated(randf()) * 300
+	node.position = position + Vector2.RIGHT.rotated(randf()) * 0
 	SignalBus.add_to_scene.emit(node)
